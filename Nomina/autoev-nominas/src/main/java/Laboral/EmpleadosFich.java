@@ -261,8 +261,8 @@ public class EmpleadosFich {
 
         try {
             st = con.createStatement();
-            st.execute("Update Empleados emp set emp.nombre='" + emp.nombre + "' and emp.sexo='" + emp.sexo + "' and emp.categoria=" + emp.getCategoria() + " and emp.anyos=" + emp.anyos + " where emp.dni='" + emp.dni + "'");
-            st.execute("Update nominas set Nomina=" + Nomina.sueldo(emp) + " where dni='" + emp.dni + "'");
+            st.executeUpdate("Update empleados  set nombre='" + emp.nombre + "', sexo='" + emp.sexo + "', categoria=" + emp.getCategoria() + ", anyos=" + emp.anyos + " where dni='" + emp.dni + "'");
+            st.executeUpdate("Update nominas set Nomina=" + Nomina.sueldo(emp) + " where dni='" + emp.dni + "'");
 
         } catch (SQLException ex) {
 
@@ -289,7 +289,7 @@ public class EmpleadosFich {
 
         try {
             st = con.createStatement();
-            st.execute("update nominas set sueldo=" + Nomina.sueldo(getEmpleado(dni)) + " where dni='" + dni + "'");
+            st.executeUpdate("update nominas set sueldo=" + Nomina.sueldo(getEmpleado(dni)) + " where dni='" + dni + "'");
 
         } catch (SQLException ex) {
 
@@ -316,7 +316,7 @@ public class EmpleadosFich {
 
         try {
             st = con.createStatement();
-            st.execute("delete from empleados emp  where emp.dni='"+ dni +"'");
+            st.execute("delete from empleados  where dni='"+ dni +"'");
 
         } catch (SQLException ex) {
 

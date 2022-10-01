@@ -61,7 +61,7 @@ public class Menu {
 								+ "1. Nombre \n"
 								+ "2. Sexo \n"
 								+ "3. Categoria \n"
-								+ "4. Anyos \n"
+								+ "4. Años (Antigüedad) \n"
 								+ "5. Todos los campos \n"
 								+ "Introduce cualquier otra tecla para salir.");
 						String opcioneditar = sc.nextLine();
@@ -104,7 +104,7 @@ public class Menu {
 							}catch (DatosNoCorrectosException ex) {
 								ex.printStackTrace();
 							}						
-							System.out.println("Actualiza los años");
+							System.out.println("Actualiza la antigüedad del emplead (años trabajados)");
 							emp.anyos = scnum.nextInt();
 							EmpleadosFich.updateEmpleado(emp);
 							break;
@@ -150,7 +150,7 @@ public class Menu {
 					break;
 					
 				case "7":
-					System.out.println("¿Alta manual o usando el fichero empleadosNuevos.txt? ");
+					System.out.println("¿Desea realziar un alta  manual o usando el fichero empleadosNuevos.txt? ");
 					System.out.println("1. Manual");
 					System.out.println("2. Fichero");
 					String submenualta = sc.nextLine();
@@ -168,7 +168,7 @@ public class Menu {
 						sexo = sc.nextLine().charAt(0);
 						System.out.println("Introduce la categoria del empleado");
 						categoria=scnum.nextInt();
-						System.out.println("Introduce los anyos trabajados del empleado");
+						System.out.println("Introduce los años trabajados del empleado");
 						anyos = scnum.nextInt();
 						EmpleadosFich.altaEmpleado(nombre, dniemp, sexo, categoria, anyos);
 						System.out.println("Consulta Enviada");				
