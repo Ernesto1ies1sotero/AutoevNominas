@@ -181,7 +181,7 @@ public class EmpleadosFich {
     public static boolean emplExist(String dni) throws SQLException {
         //Conexón a la base de datos
         Connection con = DBUtils.getConnection();
-        Empleado emp = null;
+        
         Statement st = null;
         ResultSet rs = null;
         boolean existe = false;
@@ -211,8 +211,10 @@ public class EmpleadosFich {
                 System.out.println("Ocurrió una excepción al cerrar la BD");
             }
 
-            return existe;
+            
         }
+        
+        return existe;
     }
 
     public static Empleado getEmpleado(String dni) throws SQLException {
@@ -243,12 +245,13 @@ public class EmpleadosFich {
                 }
 
                 DBUtils.close(con);
-            } catch (SQLException e) {
+            } catch (final SQLException e) {
                 System.out.println("Ocurrió una excepción al cerrar la BD");
             }
 
-            return emp;
+           
         }
+        return emp;
 
     }
 
